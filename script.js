@@ -1,5 +1,5 @@
 // Paste the deployed Cloudflare Worker URL here. This is a public address, NOT an API key.
-const WORKER_URL = "";
+const WORKER_URL = "https://tight-hat-dd15.lukson-mjavanadze.workers.dev";
 
 // This instruction accompanies every request, including follow-up messages.
 const SYSTEM_PROMPT = `You are a friendly beauty advisor for a L’Oréal student project.
