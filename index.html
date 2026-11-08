@@ -1,64 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="page-wrapper">
-      <!------- Header / Branding ------->
-      <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
-      </header>
-
-      <!------- Chat Area ------->
-      <main>
-        <section class="chatbox">
-          <div id="chatWindow" class="chat-window">
-            <!-- messages will be appended here via JS -->
-          </div>
-
-          <form id="chatForm" class="chat-form">
-            <label for="userInput" class="visually-hidden">Message</label>
-            <input
-              id="userInput"
-              name="userInput"
-              type="text"
-              placeholder="Ask me about products or routines…"
-              autocomplete="off"
-              required
-            />
-            <button type="submit" id="sendBtn">
-              <span class="material-icons">send</span>
-              <span class="visually-hidden">Send</span>
-            </button>
-          </form>
-        </section>
-      </main>
-
-      <!------- Footer Links ------->
-      <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
-        <nav>
-          <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
-        </nav>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore L’Oréal beauty products and build your personal routine. A student chatbot project.">
+<title>L’Oréal | Your Beauty Advisor</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="header"><a href="./" aria-label="L’Oréal beauty advisor home"><img src="img/loreal-logo.png" alt="L’Oréal" width="180"></a><span>BEAUTY, PERSONALIZED.</span></header>
+<main>
+<section class="intro">
+<p class="eyebrow">YOUR BEAUTY, YOUR WAY</p>
+<h1>A little guidance.<br>A routine <em>all yours.</em></h1>
+<p class="description">Discover L’Oréal products and everyday routines that fit your beauty goals. Let’s find your starting point.</p>
+<div class="topics" aria-label="Conversation starters">
+<button type="button" data-question="Help me build a simple L’Oréal skincare routine.">01 <span>Skincare</span> ↗</button>
+<button type="button" data-question="Help me choose L’Oréal haircare for my hair type.">02 <span>Haircare</span> ↗</button>
+<button type="button" data-question="Help me choose L’Oréal makeup for an everyday look.">03 <span>Makeup</span> ↗</button>
+<button type="button" data-question="Help me discover fragrances from L’Oréal Group brands.">04 <span>Fragrance</span> ↗</button>
+</div>
+<p class="note">Tell me your goals, preferences, and budget. Please avoid sharing sensitive personal information.</p>
+</section>
+<section class="chatbox" aria-labelledby="chatTitle">
+<div class="chat-heading"><div><p class="eyebrow">LET’S TALK BEAUTY</p><h2 id="chatTitle">Your beauty advisor</h2></div><button id="resetBtn" type="button" class="reset">New chat</button></div>
+<p id="latestQuestion" class="latest" hidden></p>
+<div id="chatWindow" class="chat-window" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Conversation"></div>
+<p id="status" role="status" class="status"></p>
+<form id="chatForm" class="chat-form">
+<label for="userInput" class="visually-hidden">Your beauty question</label>
+<input id="userInput" name="message" type="text" placeholder="What would you like to discover?" maxlength="2000" autocomplete="off" required>
+<button id="sendBtn" type="submit" aria-label="Send message">↑</button>
+</form>
+<p class="chat-note">AI suggestions can be imperfect. Check product labels and suitability.</p>
+</section>
+</main>
+<footer><span>Student project by Luka Mzhavanadze · Not an official L’Oréal service.</span><span>Conversation stays in this tab and is sent to the AI service when you chat.</span></footer>
+</body>
 </html>
